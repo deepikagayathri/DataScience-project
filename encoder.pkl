@@ -1,0 +1,19 @@
+from sklearn.preprocessing import LabelEncoder
+import joblib
+
+# Example categorical values
+weather_conditions = [
+    "Clear",
+    "Clouds",
+    "Rain",
+    "Drizzle",
+    "Thunderstorm",
+    "Mist"
+]
+
+encoder = LabelEncoder()
+encoder.fit(weather_conditions)
+
+joblib.dump(encoder, "ml_model/encoder.pkl")
+
+print("encoder.pkl created successfully!")
